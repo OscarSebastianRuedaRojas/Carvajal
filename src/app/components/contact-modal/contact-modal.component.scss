@@ -1,0 +1,151 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(3, 13, 27, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background: var(--secondary-navy);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 650px;
+  padding: 2.5rem 2rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-light-gray);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--gold);
+    }
+  }
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+
+  .section-badge {
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.75rem;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-subtitle {
+    font-size: 0.9375rem;
+    color: var(--text-light-gray);
+  }
+}
+
+.alert-success {
+  background-color: rgba(201, 164, 92, 0.15);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;
+
+  svg {
+    stroke: var(--gold);
+    flex-shrink: 0;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--white);
+  }
+
+  input, textarea {
+    background-color: var(--primary-navy);
+    border: 1px solid var(--border-glass);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    transition: all var(--transition-fast);
+
+    &:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 10px rgba(201, 164, 92, 0.2);
+    }
+
+    &.invalid {
+      border-color: #e74c3c;
+    }
+  }
+
+  .error-text {
+    font-size: 0.75rem;
+    color: #e74c3c;
+  }
+}
+
+.w-full {
+  width: 100%;
+}

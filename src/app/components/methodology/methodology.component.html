@@ -1,0 +1,35 @@
+<section id="methodology" class="methodology-section">
+  <div class="container">
+    
+    <!-- Section Header -->
+    <div class="section-header text-center">
+      <span class="section-badge">NUESTRO ENFOQUE</span>
+      <h2 class="section-title">De la información financiera a la estrategia.</h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="timeline-wrapper">
+      <!-- Connecting Line -->
+      <div class="timeline-line"></div>
+
+      <div class="steps-grid">
+        @for (step of steps; track step.stepNumber) {
+          <div class="step-card">
+            
+            <!-- Number Circle -->
+            <div class="step-number-circle">
+              <span class="step-num">{{ step.stepNumber }}</span>
+            </div>
+
+            <!-- Content -->
+            <h3 class="step-title">{{ step.title }}</h3>
+            <p class="step-description">{{ step.description }}</p>
+
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

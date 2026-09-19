@@ -1,0 +1,149 @@
+.methodology-section {
+  padding: 100px 0;
+  background-color: var(--secondary-navy);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 5rem;
+
+  .section-badge {
+    justify-content: center;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    color: var(--white);
+    line-height: 1.25;
+    margin-top: 0.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 1.25rem auto 0;
+    border-radius: 2px;
+  }
+}
+
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.timeline-line {
+  position: absolute;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  z-index: 1;
+
+  /* Mobile: Vertical line on left */
+  top: 30px;
+  bottom: 30px;
+  left: 28px;
+  width: 2px;
+  height: auto;
+
+  /* Desktop: Horizontal line centered on circles */
+  @media (min-width: 992px) {
+    top: 32px;
+    left: 8%;
+    right: 8%;
+    width: 84%;
+    height: 2px;
+  }
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.step-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-left: 0;
+
+  @media (min-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .step-number-circle {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--primary-navy);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(201, 164, 92, 0.25);
+    transition: all var(--transition-fast);
+
+    .step-num {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+  }
+
+  .step-title {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    margin-top: 0.75rem;
+
+    @media (min-width: 992px) {
+      margin-top: 1.25rem;
+    }
+  }
+
+  .step-description {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-light-gray);
+  }
+
+  &:hover {
+    .step-number-circle {
+      background-color: var(--gold);
+      transform: scale(1.1);
+
+      .step-num {
+        color: var(--primary-navy);
+      }
+    }
+  }
+}

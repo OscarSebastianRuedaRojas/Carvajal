@@ -1,0 +1,46 @@
+.breadcrumbs-nav {
+  padding: 0.75rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  font-size: 0.8125rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light-gray);
+
+  .separator {
+    stroke: var(--gold);
+    opacity: 0.7;
+  }
+}
+
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-light-gray);
+  transition: color var(--transition-fast);
+
+  svg {
+    stroke: var(--gold);
+  }
+
+  &:hover {
+    color: var(--gold-light);
+  }
+}
+
+.breadcrumb-current {
+  color: var(--gold);
+  font-weight: 600;
+}

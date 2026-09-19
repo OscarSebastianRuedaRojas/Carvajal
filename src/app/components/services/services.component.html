@@ -1,0 +1,57 @@
+<section id="services" class="services-section">
+  <div class="container">
+    
+    <!-- Section Header -->
+    <div class="section-header text-center">
+      <span class="section-badge">NUESTROS SERVICIOS</span>
+      <h2 class="section-title">Soluciones financieras integrales para tu empresa.</h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- Dynamic Service Cards Grid -->
+    <div class="services-grid">
+      @for (service of services; track service.id) {
+        <article class="service-card" [routerLink]="['/servicios', service.slug]">
+          
+          <!-- Top Accent Gold Line -->
+          <div class="card-top-accent"></div>
+
+          <!-- Card Icon -->
+          <div class="icon-wrapper">
+            @switch (service.icon) {
+              @case ('bar-chart') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+              }
+              @case ('line-chart') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              }
+              @case ('pie-chart') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+              }
+              @case ('file-check') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+              }
+              @case ('calculator') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+              }
+            }
+          </div>
+
+          <!-- Title -->
+          <h3 class="service-title">{{ service.title }}</h3>
+
+          <!-- Description -->
+          <p class="service-description">{{ service.description }}</p>
+
+          <!-- Link to detail page -->
+          <div class="service-link">
+            <span>SABER MÁS</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+
+        </article>
+      }
+    </div>
+
+  </div>
+</section>
